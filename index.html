@@ -1,200 +1,528 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VOIDX744</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(141,69,255,.25),
+    transparent 30%),
+
+    radial-gradient(circle at top left,
+    rgba(57,255,20,.15),
+    transparent 30%),
+
+    linear-gradient(
+    135deg,
+    #04060a,
+    #090d18,
+    #04060a
+    );
+
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* TOP BAR */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 30px;
+
+    color:#39ff14;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+    letter-spacing:2px;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+/* HERO */
+
+.hero{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:60px;
+
+    padding:60px;
+
+    min-height:420px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(57,255,20,.06),
+    rgba(141,69,255,.05)
+    );
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.hero-left{
+    flex:1;
+}
+
+.hero-right{
+    width:400px;
+}
+
+.hero h1{
+
+    font-size:9rem;
+    line-height:.9;
+    font-weight:900;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ffffff,
+    #ffffff,
+    #39ff14,
+    #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 5px 0 #19aa0f,
+    0 0 40px rgba(57,255,20,.35);
+}
+
+.hero-right h2{
+
+    font-size:3rem;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.hero-right p{
+
+    color:#c8d0e0;
+    line-height:1.6;
+    font-size:1.1rem;
+}
+
+/* BUTTONS */
+
+.tabs{
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:30px;
+}
+
+.tabs button{
+
+    background:#101827;
+
+    border:2px solid #262f45;
+
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    font-size:15px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.tabs button:hover{
+
+    background:#7c3aed;
+    border-color:#a855f7;
+}
+
+.tabs button.active{
+
+    background:#39ff14;
+    color:black;
+    border-color:#39ff14;
+}
+
+/* CONTENT */
+
+main{
+    padding:50px;
+}
+
+.content{
+    display:none;
+}
+
+.active-section{
+    display:block;
+}
+
+/* FEATURE */
+
+.feature{
+
+    background:
+    linear-gradient(
+    135deg,
+    #0d1320,
+    #131d33
+    );
+
+    border:1px solid #25314a;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:30px;
+}
+
+.feature-banner{
+
+    height:260px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #39ff14,
+    #7c3aed
+    );
+}
+
+.feature-banner h2{
+
+    font-size:4rem;
+
+    color:white;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+}
+
+.feature-content{
+
+    padding:30px;
+}
+
+.feature-content p{
+
+    color:#d1d5db;
+
+    line-height:1.7;
+}
+
+/* CARDS */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.card{
+
+    background:
+    linear-gradient(
+    135deg,
+    #0f172a,
+    #131a2b
+    );
+
+    border:1px solid #24304a;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    transition:.25s;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#7c3aed;
+
+    box-shadow:
+    0 0 25px rgba(124,58,237,.3);
+}
+
+.card h3{
+
+    margin-bottom:12px;
+
+    color:white;
+}
+
+.card p{
+
+    color:#b9c0ce;
+
+    line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero{
+
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-right{
+    width:100%;
+}
+
+.hero h1{
+    font-size:5rem;
+}
+
+}
+
+</style>
 </head>
 <body>
- 
+
 <div class="topbar">
-<span>● NEW CONTENT EVERY WEEK</span>
-<span>VOIDX744</span>
-<span>FREE</span>
+    <span>NEW DROPS EVERY WEEK</span>
+    <span>VOIDX744</span>
+    <span>FREE</span>
 </div>
- 
+
 <header class="hero">
-<div class="hero-left">
-<h1>VOIDX744</h1>
- 
-<div class="tabs">
-<button class="active" onclick="showSection('game')">GAME</button>
-<button onclick="showSection('develop')">DEVELOP</button>
-<button onclick="showSection('publish')">PUBLISH</button>
-<button onclick="showSection('edit')">EDIT</button>
-</div>
-</div>
- 
-<div class="hero-right">
-<h2>BUILD. CREATE. SHARE.</h2>
-<p>
-Games, development logs, releases and editing projects
-from the VOIDX744 studio.
-</p>
-</div>
+
+    <div class="hero-left">
+
+        <h1>VOIDX744</h1>
+
+        <div class="tabs">
+            <button class="active" onclick="showSection('game',this)">GAME</button>
+            <button onclick="showSection('develop',this)">DEVELOP</button>
+            <button onclick="showSection('publish',this)">PUBLISH</button>
+            <button onclick="showSection('edit',this)">EDIT</button>
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <h2>Build. Create. Release.</h2>
+
+        <p>
+            Games, development logs, releases,
+            videos and editing projects from
+            the VOIDX744 universe.
+        </p>
+
+    </div>
+
 </header>
- 
-<div class="ticker">
-<div class="ticker-text">
-★ NEW PROJECT ★ DEVLOG #1 ★ WEBSITE LAUNCH ★ NEW EDIT COMING SOON ★
-</div>
-</div>
- 
+
 <main>
- 
+
 <section id="game" class="content active-section">
- 
-<div class="feature-card">
-<h2>GAME</h2>
-<p>
-Showcase gameplay videos, screenshots and guides.
-</p>
-</div>
- 
-<div class="grid">
-<article class="card">
-<h3>Featured Project</h3>
-<p>Add game screenshots here.</p>
-</article>
- 
-<article class="card">
-<h3>Latest Build</h3>
-<p>Share updates and changelogs.</p>
-</article>
- 
-<article class="card">
-<h3>Downloads</h3>
-<p>Link releases and demos.</p>
-</article>
-</div>
- 
+
+    <div class="feature">
+
+        <div class="feature-banner">
+            <h2>GAME</h2>
+        </div>
+
+        <div class="feature-content">
+            <p>Showcase gameplay clips, screenshots, guides and projects.</p>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Featured Game</h3>
+            <p>Your latest project goes here.</p>
+        </div>
+
+        <div class="card">
+            <h3>Screenshots</h3>
+            <p>Gallery for your best moments.</p>
+        </div>
+
+        <div class="card">
+            <h3>Downloads</h3>
+            <p>Link builds and releases.</p>
+        </div>
+
+    </div>
+
 </section>
- 
+
 <section id="develop" class="content">
- 
-<div class="feature-card">
-<h2>DEVELOP</h2>
-<p>Development blogs and tutorials.</p>
-</div>
- 
-<div class="grid">
-<article class="card">
-<h3>Devlog #1</h3>
-<p>Write your progress updates.</p>
-</article>
- 
-<article class="card">
-<h3>Tools</h3>
-<p>List software and resources.</p>
-</article>
- 
-<article class="card">
-<h3>Roadmap</h3>
-<p>Future plans and goals.</p>
-</article>
-</div>
- 
+
+    <div class="feature">
+
+        <div class="feature-banner">
+            <h2>DEVELOP</h2>
+        </div>
+
+        <div class="feature-content">
+            <p>Development progress, tools and tutorials.</p>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Projects</h3>
+            <p>Current work in progress.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tools</h3>
+            <p>Software and workflows.</p>
+        </div>
+
+        <div class="card">
+            <h3>Roadmap</h3>
+            <p>Plans for future releases.</p>
+        </div>
+
+    </div>
+
 </section>
- 
+
 <section id="publish" class="content">
- 
-<div class="feature-card">
-<h2>PUBLISH</h2>
-<p>Released projects and announcements.</p>
-</div>
- 
-<div class="grid">
-<article class="card">
-<h3>Release Notes</h3>
-<p>Version history goes here.</p>
-</article>
- 
-<article class="card">
-<h3>Downloads</h3>
-<p>Add release links.</p>
-</article>
- 
-<article class="card">
-<h3>News</h3>
-<p>Project announcements.</p>
-</article>
-</div>
- 
+
+    <div class="feature">
+
+        <div class="feature-banner">
+            <h2>PUBLISH</h2>
+        </div>
+
+        <div class="feature-content">
+            <p>Release announcements and completed projects.</p>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Latest Release</h3>
+            <p>Feature your newest launch.</p>
+        </div>
+
+        <div class="card">
+            <h3>Store Links</h3>
+            <p>Add downloads and purchase links.</p>
+        </div>
+
+        <div class="card">
+            <h3>News</h3>
+            <p>Announcements and updates.</p>
+        </div>
+
+    </div>
+
 </section>
- 
+
 <section id="edit" class="content">
- 
-<div class="feature-card">
-<h2>EDIT</h2>
-<p>Videos, montages and creative projects.</p>
-</div>
- 
-<div class="grid">
-<article class="card">
-<h3>Latest Edit</h3>
-<p>Embed YouTube videos.</p>
-</article>
- 
-<article class="card">
-<h3>Clips</h3>
-<p>Highlight reels and shorts.</p>
-</article>
- 
-<article class="card">
-<h3>Portfolio</h3>
-<p>Your best editing work.</p>
-</article>
-</div>
- 
+
+    <div class="feature">
+
+        <div class="feature-banner">
+            <h2>EDIT</h2>
+        </div>
+
+        <div class="feature-content">
+            <p>Montages, edits, cinematic projects and shorts.</p>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Featured Edit</h3>
+            <p>Embed your best video here.</p>
+        </div>
+
+        <div class="card">
+            <h3>Clips</h3>
+            <p>Highlights and short-form content.</p>
+        </div>
+
+        <div class="card">
+            <h3>Showreel</h3>
+            <p>Your editing portfolio.</p>
+        </div>
+
+    </div>
+
 </section>
- 
+
 </main>
- 
+
 <script>
-function showSection(id) {
- 
-document.querySelectorAll('.content')
+
+function showSection(id, button){
+
+document
+.querySelectorAll(".content")
 .forEach(section =>
-section.classList.remove('active-section')
-);
- 
-document.getElementById(id)
-.classList.add('active-section');
- 
-document.querySelectorAll('.tabs button')
+section.classList.remove("active-section"));
+
+document
+.getElementById(id)
+.classList.add("active-section");
+
+document
+.querySelectorAll(".tabs button")
 .forEach(btn =>
-btn.classList.remove('active')
-);
- 
-event.target.classList.add('active');
+btn.classList.remove("active"));
+
+button.classList.add("active");
+
 }
+
 </script>
- 
+
 </body>
 </html>
-style.css
-CSS
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
- 
-body{
-background:#05070a;
-color:white;
-font-family:Arial, Helvetica, sans-serif;
-}
- 
-.topbar{
-display:flex;
-justify-content:space-between;
-padding:12px 30px;
-background:#0d1218;
-border-bottom:1px solid #1f2937;
-color:#39ff14;
-font-weight:bold;
-font-size:12px;
-letter-spacing:2px;
-}
