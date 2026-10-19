@@ -217,7 +217,17 @@
       text-transform: uppercase;
       color: var(--accent);
     }
-    .card.soon { opacity: 0.55; pointer-events: none; }
+      .group-title {
+      margin: 26px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .panel-head + .group-title { margin-top: 0; }
 
     footer {
       border-top: 1px solid var(--line);
@@ -262,7 +272,30 @@
   </div>
 
   <main class="wrap">
-    <!-- GAME -->
+ <section class="panel active" id="game">
+      <div class="panel-head">
+        <div class="kicker">Section 01</div>
+        <h3>Games</h3>
+      </div>
+      <!-- To add a game: copy a whole <a class="card"> ... </a> block and change the link, number, name and text -->
+      <h4 class="group-title">Steam</h4>
+      <div class="cards">
+        <a class="card" href="steam://rungameid/322170">
+          <span class="num">01</span>
+          <div><h4>Geometry Dash</h4><p>Launch it in Steam.</p></div>
+          <span class="go">Play →</span>
+        </a>
+      </div>
+
+      <h4 class="group-title">Xbox</h4>
+      <div class="cards">
+        <a class="card" href="ms-xbl-0ff4b5bd://">
+          <span class="num">01</span>
+          <div><h4>Fortnite</h4><p>Launch it from the Xbox app.</p></div>
+          <span class="go">Play →</span>
+        </a>
+      </div>
+    </section>
     <section class="panel active" id="game">
       <div class="panel-head">
         <div class="kicker">Section 01</div>
