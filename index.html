@@ -1,528 +1,370 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>VOIDX744</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-
-    background:
-    radial-gradient(circle at top right,
-    rgba(141,69,255,.25),
-    transparent 30%),
-
-    radial-gradient(circle at top left,
-    rgba(57,255,20,.15),
-    transparent 30%),
-
-    linear-gradient(
-    135deg,
-    #04060a,
-    #090d18,
-    #04060a
-    );
-
-    color:white;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-/* TOP BAR */
-
-.topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:12px 30px;
-
-    color:#39ff14;
-
-    text-transform:uppercase;
-
-    font-size:12px;
-    letter-spacing:2px;
-
-    border-bottom:1px solid rgba(255,255,255,.05);
-}
-
-/* HERO */
-
-.hero{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    gap:60px;
-
-    padding:60px;
-
-    min-height:420px;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(57,255,20,.06),
-    rgba(141,69,255,.05)
-    );
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.hero-left{
-    flex:1;
-}
-
-.hero-right{
-    width:400px;
-}
-
-.hero h1{
-
-    font-size:9rem;
-    line-height:.9;
-    font-weight:900;
-
-    background:
-    linear-gradient(
-    90deg,
-    #ffffff,
-    #ffffff,
-    #39ff14,
-    #ffffff
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    text-shadow:
-    0 5px 0 #19aa0f,
-    0 0 40px rgba(57,255,20,.35);
-}
-
-.hero-right h2{
-
-    font-size:3rem;
-    text-transform:uppercase;
-    margin-bottom:15px;
-}
-
-.hero-right p{
-
-    color:#c8d0e0;
-    line-height:1.6;
-    font-size:1.1rem;
-}
-
-/* BUTTONS */
-
-.tabs{
-
-    display:flex;
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-top:30px;
-}
-
-.tabs button{
-
-    background:#101827;
-
-    border:2px solid #262f45;
-
-    color:white;
-
-    padding:14px 26px;
-
-    border-radius:999px;
-
-    font-size:15px;
-    font-weight:800;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.tabs button:hover{
-
-    background:#7c3aed;
-    border-color:#a855f7;
-}
-
-.tabs button.active{
-
-    background:#39ff14;
-    color:black;
-    border-color:#39ff14;
-}
-
-/* CONTENT */
-
-main{
-    padding:50px;
-}
-
-.content{
-    display:none;
-}
-
-.active-section{
-    display:block;
-}
-
-/* FEATURE */
-
-.feature{
-
-    background:
-    linear-gradient(
-    135deg,
-    #0d1320,
-    #131d33
-    );
-
-    border:1px solid #25314a;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin-bottom:30px;
-}
-
-.feature-banner{
-
-    height:260px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-    linear-gradient(
-    135deg,
-    #39ff14,
-    #7c3aed
-    );
-}
-
-.feature-banner h2{
-
-    font-size:4rem;
-
-    color:white;
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-}
-
-.feature-content{
-
-    padding:30px;
-}
-
-.feature-content p{
-
-    color:#d1d5db;
-
-    line-height:1.7;
-}
-
-/* CARDS */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-
-    gap:20px;
-}
-
-.card{
-
-    background:
-    linear-gradient(
-    135deg,
-    #0f172a,
-    #131a2b
-    );
-
-    border:1px solid #24304a;
-
-    border-radius:15px;
-
-    padding:25px;
-
-    transition:.25s;
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    border-color:#7c3aed;
-
-    box-shadow:
-    0 0 25px rgba(124,58,237,.3);
-}
-
-.card h3{
-
-    margin-bottom:12px;
-
-    color:white;
-}
-
-.card p{
-
-    color:#b9c0ce;
-
-    line-height:1.6;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero{
-
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-right{
-    width:100%;
-}
-
-.hero h1{
-    font-size:5rem;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06080b;
+      --panel: #10141a;
+      --panel-2: #171c24;
+      --line: #232a35;
+      --text: #f4f6f8;
+      --muted: #9aa4b2;
+      --green: #107c10;
+      --neon: #3ee13e;
+      --epic: #b05cff;
+      --rare: #2f9bff;
+      --legendary: #ffa21a;
+      --display: 'Anton', Impact, 'Arial Narrow Bold', sans-serif;
+      --body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--body);
+      color: var(--text);
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(900px 500px at 0% -10%, rgba(16, 124, 16, 0.35), transparent 60%),
+        radial-gradient(800px 600px at 110% 30%, rgba(176, 92, 255, 0.22), transparent 60%),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0 2px, transparent 2px 8px);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+    /* Top strip */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .topbar .live { color: var(--neon); }
+    .topbar .live::before {
+      content: "";
+      display: inline-block;
+      width: 6px; height: 6px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: var(--neon);
+      vertical-align: middle;
+    }
+
+    /* Masthead */
+    .masthead {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 32px;
+      padding: 20px 0 8px;
+    }
+    .logo {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(64px, 14vw, 130px);
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      transform: skewX(-8deg);
+      background: linear-gradient(#fff 0%, #fff 55%, #c9f7c9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 6px 0 var(--green)) drop-shadow(0 0 24px rgba(62, 225, 62, 0.35));
+    }
+    .logo span { color: var(--neon); -webkit-text-fill-color: var(--neon); }
+    .tagline { max-width: 300px; }
+    .tagline h2 {
+      margin: 0 0 6px;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .tagline p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+    /* Tabs (pill chips) */
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 0 20px; }
+    .tab {
+      font-family: var(--body);
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: var(--panel);
+      border: 1.6px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 18px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    }
+    .tab:hover { border-color: var(--muted); }
+    .tab:active { transform: scale(0.97); }
+    .tab.active { background: var(--neon); border-color: var(--neon); color: #041004; }
+
+    /* Ticker */
+    .ticker {
+      background: var(--neon);
+      color: #041004;
+      transform: skewY(-1.2deg);
+      box-shadow: 0 8px 30px rgba(62, 225, 62, 0.25);
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 8px -20px 36px;
+    }
+    .ticker-track {
+      display: inline-block;
+      padding: 10px 0;
+      font-family: var(--display);
+      font-size: 20px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      animation: scroll 30s linear infinite;
+    }
+    .ticker-track span { margin: 0 18px; }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+    /* Panels */
+    .panel { display: none; padding-bottom: 60px; }
+    .panel.active { display: block; animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+    .panel-head { margin-bottom: 18px; }
+    .kicker {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .panel-head h3 {
+      margin: 4px 0 0;
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(36px, 7vw, 56px);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    #game  { --accent: var(--legendary); }
+    #code  { --accent: var(--rare); }
+    #video { --accent: var(--epic); }
+    #ask   { --accent: var(--neon); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 22px 20px 40px;
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+    .card .num {
+      font-family: var(--display);
+      font-size: 34px;
+      line-height: 1;
+      color: var(--accent);
+    }
+    .card h4 {
+      margin: 2px 0 6px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
+    .card .go {
+      position: absolute;
+      right: 16px; bottom: 14px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .card.soon { opacity: 0.55; pointer-events: none; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 0 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-
-<div class="topbar">
-    <span>NEW DROPS EVERY WEEK</span>
-    <span>VOIDX744</span>
-    <span>FREE</span>
-</div>
-
-<header class="hero">
-
-    <div class="hero-left">
-
-        <h1>VOIDX744</h1>
-
-        <div class="tabs">
-            <button class="active" onclick="showSection('game',this)">GAME</button>
-            <button onclick="showSection('develop',this)">DEVELOP</button>
-            <button onclick="showSection('publish',this)">PUBLISH</button>
-            <button onclick="showSection('edit',this)">EDIT</button>
-        </div>
-
+  <div class="wrap">
+    <div class="topbar">
+      <span class="live">Pick a tab</span>
+      <span>Game · Code · Video · Ask</span>
     </div>
 
-    <div class="hero-right">
+    <header class="masthead">
+      <!-- Change the site name here -->
+      <h1 class="logo">My<span>Hub</span></h1>
+      <div class="tagline">
+        <h2>Play. Build. Edit. Ask.</h2>
+        <p>Everything you need in one place — games, coding tools, video editors and AI helpers.</p>
+      </div>
+    </header>
 
-        <h2>Build. Create. Release.</h2>
+    <nav class="tabs">
+      <button class="tab active" data-tab="game">Game</button>
+      <button class="tab" data-tab="code">Code</button>
+      <button class="tab" data-tab="video">Video</button>
+      <button class="tab" data-tab="ask">Ask</button>
+    </nav>
+  </div>
 
-        <p>
-            Games, development logs, releases,
-            videos and editing projects from
-            the VOIDX744 universe.
-        </p>
-
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Game</span>★<span>Scratch</span>★<span>Python</span>★<span>Godot</span>★<span>YouTube</span>★<span>CapCut</span>★<span>Copilot</span>★<span>ChatGPT</span>★<span>Claude</span>★
+      <span>Game</span>★<span>Scratch</span>★<span>Python</span>★<span>Godot</span>★<span>YouTube</span>★<span>CapCut</span>★<span>Copilot</span>★<span>ChatGPT</span>★<span>Claude</span>★
     </div>
+  </div>
 
-</header>
+  <main class="wrap">
+    <!-- GAME -->
+    <section class="panel active" id="game">
+      <div class="panel-head">
+        <div class="kicker">Section 01</div>
+        <h3>Games</h3>
+      </div>
+      <div class="cards">
+        <!-- TODO: put your games link in href and remove class "soon" -->
+        <a class="card soon" href="#" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <div>
+            <h4>Games</h4>
+            <p>Coming soon.</p>
+          </div>
+        </a>
+      </div>
+    </section>
 
-<main>
+    <!-- CODE -->
+    <section class="panel" id="code">
+      <div class="panel-head">
+        <div class="kicker">Section 02</div>
+        <h3>Code</h3>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://scratch.mit.edu/projects/editor/" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <div><h4>Scratch</h4><p>Drag-and-drop block coding.</p></div>
+          <span class="go">Open →</span>
+        </a>
+        <a class="card" href="https://www.python.org/" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <div><h4>Python</h4><p>Real text-based programming.</p></div>
+          <span class="go">Open →</span>
+        </a>
+        <a class="card" href="https://godotengine.org/" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <div><h4>Godot</h4><p>Free engine for making games.</p></div>
+          <span class="go">Open →</span>
+        </a>
+      </div>
+    </section>
 
-<section id="game" class="content active-section">
+    <!-- VIDEO -->
+    <section class="panel" id="video">
+      <div class="panel-head">
+        <div class="kicker">Section 03</div>
+        <h3>Video</h3>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://www.youtube.com/upload" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <div><h4>YouTube</h4><p>Upload and publish your video.</p></div>
+          <span class="go">Open →</span>
+        </a>
+        <a class="card" href="https://www.capcut.com/editor" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <div><h4>CapCut</h4><p>Cut and edit your clips.</p></div>
+          <span class="go">Open →</span>
+        </a>
+      </div>
+    </section>
 
-    <div class="feature">
+    <!-- ASK -->
+    <section class="panel" id="ask">
+      <div class="panel-head">
+        <div class="kicker">Section 04</div>
+        <h3>Ask</h3>
+      </div>
+      <div class="cards">
+        <a class="card" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">
+          <span class="num">01</span>
+          <div><h4>Copilot</h4><p>Microsoft's AI assistant.</p></div>
+          <span class="go">Open →</span>
+        </a>
+        <a class="card" href="https://chatgpt.com/" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <div><h4>ChatGPT</h4><p>OpenAI's AI assistant.</p></div>
+          <span class="go">Open →</span>
+        </a>
+        <a class="card" href="https://claude.ai/" target="_blank" rel="noopener">
+          <span class="num">03</span>
+          <div><h4>Claude</h4><p>Anthropic's AI assistant.</p></div>
+          <span class="go">Open →</span>
+        </a>
+      </div>
+    </section>
+  </main>
 
-        <div class="feature-banner">
-            <h2>GAME</h2>
-        </div>
+  <footer class="wrap">My Hub · Built on GitHub Pages</footer>
 
-        <div class="feature-content">
-            <p>Showcase gameplay clips, screenshots, guides and projects.</p>
-        </div>
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
 
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Featured Game</h3>
-            <p>Your latest project goes here.</p>
-        </div>
-
-        <div class="card">
-            <h3>Screenshots</h3>
-            <p>Gallery for your best moments.</p>
-        </div>
-
-        <div class="card">
-            <h3>Downloads</h3>
-            <p>Link builds and releases.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="develop" class="content">
-
-    <div class="feature">
-
-        <div class="feature-banner">
-            <h2>DEVELOP</h2>
-        </div>
-
-        <div class="feature-content">
-            <p>Development progress, tools and tutorials.</p>
-        </div>
-
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Projects</h3>
-            <p>Current work in progress.</p>
-        </div>
-
-        <div class="card">
-            <h3>Tools</h3>
-            <p>Software and workflows.</p>
-        </div>
-
-        <div class="card">
-            <h3>Roadmap</h3>
-            <p>Plans for future releases.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="publish" class="content">
-
-    <div class="feature">
-
-        <div class="feature-banner">
-            <h2>PUBLISH</h2>
-        </div>
-
-        <div class="feature-content">
-            <p>Release announcements and completed projects.</p>
-        </div>
-
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Latest Release</h3>
-            <p>Feature your newest launch.</p>
-        </div>
-
-        <div class="card">
-            <h3>Store Links</h3>
-            <p>Add downloads and purchase links.</p>
-        </div>
-
-        <div class="card">
-            <h3>News</h3>
-            <p>Announcements and updates.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="edit" class="content">
-
-    <div class="feature">
-
-        <div class="feature-banner">
-            <h2>EDIT</h2>
-        </div>
-
-        <div class="feature-content">
-            <p>Montages, edits, cinematic projects and shorts.</p>
-        </div>
-
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Featured Edit</h3>
-            <p>Embed your best video here.</p>
-        </div>
-
-        <div class="card">
-            <h3>Clips</h3>
-            <p>Highlights and short-form content.</p>
-        </div>
-
-        <div class="card">
-            <h3>Showreel</h3>
-            <p>Your editing portfolio.</p>
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-<script>
-
-function showSection(id, button){
-
-document
-.querySelectorAll(".content")
-.forEach(section =>
-section.classList.remove("active-section"));
-
-document
-.getElementById(id)
-.classList.add("active-section");
-
-document
-.querySelectorAll(".tabs button")
-.forEach(btn =>
-btn.classList.remove("active"));
-
-button.classList.add("active");
-
-}
-
-</script>
-
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        panels.forEach(p => p.classList.remove("active"));
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
